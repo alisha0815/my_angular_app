@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
+  brews: any = Object;
+
   constructor(private _http: HttpService) {}
 
   ngOnInit() {
-    this._http.myMethod();
+    this._http.getBeer().subscribe((data) => (this.brews = data));
+    console.log(this.brews);
   }
 }
