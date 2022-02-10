@@ -15,10 +15,14 @@
   </p>
 </div>
 
-<div
-  class="play-container"
-  [style.background-color]="clickCounter > 4 ? 'yellow' : 'blue'"
->
+<!-- change css property -->
+<!-- [style.background-color]="clickCounter > 4 ? 'yellow' : 'blue'" -->
+<!-- [ngStyle]="{
+    'background-color': clickCounter > 4 ? 'yellow' : 'blue',
+    border: clickCounter > 4 ? '4px solid' : 'none'
+  }" -->
+<!-- [class.active] = "clickCounter > 4" -->
+<div class="play-container" [class.active]="clickCounter > 4">
   <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
     <p>The click counter <strong>IS GREATER</strong> than 4.</p>
   </ng-template>
